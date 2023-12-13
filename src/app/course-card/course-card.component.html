@@ -1,17 +1,14 @@
-<div class="course-card">
+<div class="course-card" [ngClass]="cardClasses()" [ngStyle]="courseTitleStyles()" *ngIf="course; else noCourse">
 
   <div class="course-title">
-    @if (course.id == 1) {
-    <h3>Course with id 1 Detected</h3>
-    }
     {{course.description}}
   </div>
+
+
   @if (course.iconUrl) {
-
-  <img width="300" alt="Angular Logo" [src]="course.iconUrl">
-
+  <img [src]="course.iconUrl" [alt]="course.description" width="400">
   }@else {
-  <h3>No Image available</h3>
+  <h3>No Image Available</h3>
   }
 
   <div class="course-description">
@@ -21,3 +18,7 @@
   <button style="cursor: pointer;border: none;" type="button" (click)="onCourseViewed()">View Course</button>
 
 </div>
+
+<ng-template #noCourse>
+  <h2 style="text-align: center;">No Course Available</h2>
+</ng-template>
