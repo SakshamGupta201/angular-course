@@ -7,9 +7,14 @@ import { COURSES } from '../db-data';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
+  courses = [...COURSES];
   coreCourse = COURSES[0];
   rxjsCourse = COURSES[1];
   ngrxCourse = COURSES[2];
 
+  onCourseSelected(event: Event) {
+    console.log('On Course Selected');
+    console.log(event);
+
+  }
 }

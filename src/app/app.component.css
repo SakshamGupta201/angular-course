@@ -15,5 +15,11 @@
 }
 
 
+.is-first{
+  border-top: 2px solid gray;
+}
 
+.is-last{
+  border-bottom: 2px solid gray;
+}
 
