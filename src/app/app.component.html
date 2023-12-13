@@ -6,7 +6,7 @@
 
 
 <div class="courses">
-  @for(course of courses;track course.id; let index = $index;let count = $count;let first=$first; let last = $last){
+  @for(course of courses; track $index;let first=$first; let last=$last){
   <course-card [class.is-first]="first" [class.is-last]="last" [course]="course"
     (courseSelected)="onCourseSelected($event)"></course-card>
   }
